@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "/workspace/scripts/run-blender-mcp.sh",
+      "args": [],
+      "env": {
+        "DISABLE_TELEMETRY": "true"
+      }
+    }
+  }
+}
