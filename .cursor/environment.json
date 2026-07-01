@@ -1,0 +1,4 @@
+{
+  "install": "curl -LsSf https://astral.sh/uv/install.sh | sh && sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq blender xvfb",
+  "start": "./scripts/start-blender-mcp.sh"
+}

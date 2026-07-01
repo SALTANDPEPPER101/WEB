@@ -23,7 +23,18 @@ else
 fi
 
 for _ in $(seq 1 30); do
-  if ss -tln 2>/dev/null | grep -q ':9876 '; then
+  if python3 - <<'PY' 2>/dev/null; then
+import socket
+s = socket.socket()
+s.settimeout(0.5)
+try:
+    s.connect(("127.0.0.1", 9876))
+    raise SystemExit(0)
+except OSError:
+    raise SystemExit(1)
+finally:
+    s.close()
+PY
     echo "Blender MCP listening on localhost:9876"
     exit 0
   fi
